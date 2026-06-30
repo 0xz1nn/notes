@@ -1,7 +1,6 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
-# yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: 0xz1nn notes
+  pageTitle:  Øxz1nn
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
@@ -13,37 +12,40 @@ configuration:
     - private
     - templates
     - .obsidian
+
   theme:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Schibsted Grotesk
-      body: Source Sans Pro
+      header: IBM Plex Sans
+      body: IBM Plex Sans
       code: IBM Plex Mono
+
+  #     typography:
+  # header: IBM Plex Sans
+  # body: IBM Plex Sans
+  # code: IBM Plex Mono
     colors:
       lightMode:
-        light: "#fcfbfb"
-        lightgray: "#ece8e8"
-        gray: "#b6acac"
-        darkgray: "#5c5353"
-        dark: "#2b2525"
-        secondary: "#9f3f3f"
-        tertiary: "#b85c5c"
-        highlight: rgba(159, 63, 63, 0.12)
-        textHighlight: "#ff6b6b44"
+        light: "#FAFAF9"
+        lightgray: "#E8E6E3"
+        gray: "#A8A29E"
+        darkgray: "#57534E"
+        dark: "#292524"
+        secondary: "#DC2626"
+        tertiary: "#EF4444"
+        highlight: rgba(220, 38, 38, 0.12)
+        textHighlight: "#f8717155"
       darkMode:
-        light: "#121112"
-        lightgray: "#232022"
-        gray: "#6f6668"
-        darkgray: "#d7d0d2"
-        dark: "#f3eff0"
-        secondary: "#cf5d5d"
-        tertiary: "#b34747"
-        highlight: rgba(207, 93, 93, 0.14)
-        textHighlight: "#ff6b6b55"
-
-
-
+        light: "#0F0F10"
+        lightgray: "#1A1A1D"
+        gray: "#6B7280"
+        darkgray: "#D1D5DB"
+        dark: "#F8FAFC"
+        secondary: "#EF4444"
+        tertiary: "#F87171"
+        highlight: rgba(239, 68, 68, 0.18)
+        textHighlight: "#f8717155"
   # theme:
   #   fontOrigin: googleFonts
   #   cdnCaching: true
@@ -87,8 +89,8 @@ plugins:
     options:
       theme:
         light: github-light
-        dark: github-dark
-      keepBackground: false
+        dark: one-dark-pro
+      keepBackground: true
     order: 20
   - source: github:quartz-community/obsidian-flavored-markdown
     enabled: true
@@ -136,6 +138,18 @@ plugins:
     enabled: true
   - source: github:quartz-community/explicit-publish
     enabled: false
+  - source: github:quartz-community/unlisted-pages
+    enabled: true
+    options: {}
+    order: 45
+  - source: github:quartz-community/encrypted-pages
+    enabled: false
+  - source: github:quartz-community/stacked-pages
+    enabled: false
+    layout:
+      position: afterBody
+      priority: 50
+      display: all
   - source: github:quartz-community/alias-redirects
     enabled: true
   - source: github:quartz-community/content-index
@@ -222,7 +236,18 @@ plugins:
     enabled: false
     options:
       provider: giscus
-      options: {}
+      options:
+        repo: TODO:username/repo-name
+        repoId: TODO:your-repo-id
+        category: Announcements
+        categoryId: TODO:your-category-id
+        mapping: url
+        strict: true
+        reactionsEnabled: true
+        inputPosition: bottom
+        lightTheme: light
+        darkTheme: dark
+        lang: en
     layout:
       position: afterBody
       priority: 10
@@ -230,10 +255,21 @@ plugins:
     enabled: true
     options:
       links:
-        GitHub: https://github.com/jackyzha0/quartz
-        Discord Community: https://discord.gg/cRFFHYye7t
+        ⟡Blog: https://0xz1nn.github.io/blog
+        ⟡  LinkedIn: https://linkedin.com/in/likithgajula
+        ⟡  Medium: https://medium.com/@0xz1nn
+        ⟡  GitHub: https://github.com/0xz1nn
+
   - source: github:quartz-community/recent-notes
-    enabled: false
+    enabled: true
+    options:
+      title: Recent Notes
+      limit: 5
+      linkToMore: false
+      showTags: true
+    layout:
+      position: left
+      priority: 25
   - source: github:quartz-community/spacer
     enabled: true
     options: {}
@@ -262,28 +298,6 @@ plugins:
     layout:
       position: beforeBody
       priority: 15
-      display: all
-  - source: github:quartz-community/unlisted-pages
-    enabled: true
-    options: {}
-    order: 45
-  - source: github:quartz-community/encrypted-pages
-    enabled: true
-    options:
-      iterations: 600000
-      passwordField: password
-      unlistWhenEncrypted: false
-      outputPath: static/encryptedContentIndex.json
-    order: 900
-    layout:
-      position: body
-      priority: 100
-      display: all
-  - source: github:quartz-community/stacked-pages
-    enabled: false
-    layout:
-      position: afterBody
-      priority: 50
       display: all
 layout:
   groups:

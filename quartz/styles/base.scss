@@ -681,3 +681,31 @@ iframe.pdf {
   transition: width 0.2s ease;
   z-index: 9999;
 }
+
+
+//footer change
+
+footer {
+  p {
+    display: none;
+  }
+
+  &::before {
+    content: "Forged from Forelsket · 0xz1nn";
+    display: block;
+
+    text-align: left;
+
+    margin-bottom: 1rem;      // Increase spacing to the links
+    padding-bottom: 0.2rem;   // Tiny extra breathing room
+
+    font-family: var(--codeFont);
+    font-size: 0.95rem;
+    font-weight: 500;
+    font-style: normal;
+
+    color: var(--darkgray);
+    opacity: 0.9;
+    letter-spacing: 0.03em;
+  }
+}

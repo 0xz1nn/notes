@@ -24,7 +24,7 @@ This plugin accepts the following configuration options:
 
 ```yaml title="quartz.config.yaml"
 - source: github:quartz-community/footer
-  enabled: true
+  enabled: false
   options:
     links:
       GitHub: https://github.com/jackyzha0/quartz
